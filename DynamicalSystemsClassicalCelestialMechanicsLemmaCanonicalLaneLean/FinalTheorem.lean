@@ -1,0 +1,17 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.DynamicalSystemsClassicalCelestialMechanicsLemmaCanonicalLaneLean.TwoBodyCentralForce
+import HautevilleHouse.DynamicalSystemsClassicalCelestialMechanicsLemmaCanonicalLaneLean.KeplerOrbit
+import HautevilleHouse.DynamicalSystemsClassicalCelestialMechanicsLemmaCanonicalLaneLean.StabilityLemma
+
+namespace HautevilleHouse
+namespace DynamicalSystemsClassicalCelestialMechanicsLemmaCanonicalLaneLean
+
+def ConstrainedCelestialMechanicsClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_celestial_mechanics_endgame (A : AdmissibleClass) :
+    ConstrainedCelestialMechanicsClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end HautevilleHouse
+end HautevilleHouse
